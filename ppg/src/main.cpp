@@ -17,13 +17,11 @@ void setup()
 {
   Serial.begin(115200);
   Serial.println("Initializing...");
-    if (!particleSensor.begin(Wire, I2C_SPEED_FAST)) //Use default I2C port, 400kHz speed
+    if (!particleSensor.begin(Wire, I2C_SPEED_FAST)) 
   {
     Serial.println("MAX30105 was not found. Please check wiring/power. ");
     while (1);
   }
-  Serial.println("Place your index finger on the sensor with steady pressure.");
-
   particleSensor.setup(); 
   particleSensor.setPulseAmplitudeRed(0x0A); 
   particleSensor.setPulseAmplitudeGreen(0);
@@ -64,5 +62,3 @@ void loop()
 
   Serial.println();
 }
-
-
